@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.LoginTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-22T18:09:04" hostname="LAPTOP-S8MI6IBE" time="0.561">
+<testsuite name="tests.LoginTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-26T17:54:02" hostname="LAPTOP-S8MI6IBE" time="0.373">
   <properties/>
-  <testcase name="successLogin" classname="tests.LoginTests" time="0.561"/>
+  <testcase name="loginaSuccess" classname="tests.LoginTests" time="0.373"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 102.0.5005.61 (0e59bcc00cc4985ce39ad31c150065f159d95ad3-refs/branch-heads/5005@{#819}) on port 62831
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Jun 22, 2022 9:09:03 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected upstream dialect: W3C
-Jun 22, 2022 9:09:03 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-INFO: Found exact CDP implementation for version 102
-]]></system-err>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>
