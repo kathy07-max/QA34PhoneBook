@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.LoginTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-26T17:54:02" hostname="LAPTOP-S8MI6IBE" time="0.373">
+<testsuite name="tests.LoginTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-07-04T20:41:58" hostname="LAPTOP-S8MI6IBE" time="1.616">
   <properties/>
-  <testcase name="loginaSuccess" classname="tests.LoginTests" time="0.373"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="loginASuccess" classname="tests.LoginTests" time="1.07"/>
+  <testcase name="loginNegativeWrongEmail" classname="tests.LoginTests" time="0.489"/>
+  <system-out><![CDATA[Wrong email or password format
+            Email must contains one @ and minimum 2 symbols after last dot
+            Password must contain at least one uppercase letter!
+            Password must contain at least one lowercase letter!
+            Password must contain at least one digit!
+            Password must contain at least one special symbol from [‘$’,’~’,’-‘,’_’]!
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
