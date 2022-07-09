@@ -43,6 +43,12 @@ public class HelperUser extends HelperBase {
       click(By.xpath("//*[text()='Sign Out']"));
    }
 
+   public void loggedIn(){
+      openLoginRegForm();
+      fillLogRegForm("shevchenko@mail.ru", "020985$Max");
+      submitLogin();
+   }
+
    public boolean isAlertDisplayed() {
    Alert alert = new WebDriverWait(wd, Duration.ofSeconds(5)).until(ExpectedConditions.alertIsPresent());
    if(alert==null){
