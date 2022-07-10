@@ -14,7 +14,7 @@ public class RegistrationTests extends TestBase {
     }
     @Test
     public void registrationSuccess(){
-        int i = (int)System.currentTimeMillis()/1000;
+        int i = (int)(System.currentTimeMillis()/1000)%3800;
         appManager.getHelperUser().openLoginRegForm();
         appManager.getHelperUser().fillLogRegForm("shevchenko"+i+"@mail.ru","020985$Max");
         appManager.getHelperUser().submitRegistration();
@@ -22,7 +22,7 @@ public class RegistrationTests extends TestBase {
 
     @Test
     public void registrationSuccessModel(){
-        int i = (int)System.currentTimeMillis()/1000;
+        int i = (int)(System.currentTimeMillis()/1000)%3800;
         User user1 = new User().setEmail("shevchenko"+i+"@gmail.com").setPassword("020985$Max");
         appManager.getHelperUser().openLoginRegForm();
         appManager.getHelperUser().fillLogRegForm(user1);

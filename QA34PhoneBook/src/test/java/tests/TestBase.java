@@ -11,9 +11,9 @@ public class TestBase {
         appManager.init();
     }
 
-    @AfterSuite
-    public void tearDown() {
-      appManager.stop();
-    }
+//    @AfterSuite
+//    public void tearDown() {
+//      appManager.stop();
+//    }
 
 }

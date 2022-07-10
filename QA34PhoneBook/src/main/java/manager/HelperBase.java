@@ -1,6 +1,7 @@
 package manager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -22,5 +23,9 @@ public class HelperBase {
         wd.findElement(locator).click();
     }
 
+    public void zoomToDecrease(){
+//        JavascriptExecutor executor = (JavascriptExecutor)wd;
+//        executor.executeScript("document.body.style.zoom = '0.7'");
 
+    }
 }
