@@ -19,7 +19,7 @@ public class DeleteAllContacts extends TestBase{
     @Test
     public void deleteAllContact(){
         while (!appManager.contact().isContactsEmpty()) {
-            appManager.contact().deleteContact();
+            appManager.contact().deleteContact(By.cssSelector("h2"));
         }
         Assert.assertTrue(appManager.contact().isContactsEmpty());
     }

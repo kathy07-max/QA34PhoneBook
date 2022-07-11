@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.xml.sax.Locator;
 
 import java.util.List;
 import java.util.Random;
@@ -49,14 +50,14 @@ public class ContactHelper extends HelperBase{
     public void addContact() {
         Random random = new Random();
         int i = random.nextInt(1000)+1000;
-        Contact contact = Contact.builder().name("Nora"+i).lastName("Red").phone("6543-867"+i+"5533")
+        Contact contact = Contact.builder().name("Nora").lastName("Red").phone("6543-867"+i+"5533")
                 .email("noraR"+i+"@mail.com").address("BeerSheva").description("university friend").build();
         openAddForm();
         fillAddForm(contact);
         saveContact2();
     }
-    public void deleteContact(){
-        click(By.cssSelector("h2"));
+    public void deleteContact(By locator){
+        click(locator);
         click(By.xpath("//button[2]"));
     }
 

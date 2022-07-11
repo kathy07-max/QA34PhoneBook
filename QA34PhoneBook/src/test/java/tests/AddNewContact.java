@@ -20,7 +20,7 @@ public class AddNewContact extends TestBase{
     public void addNewContactSuccess(){
         Random random = new Random();
         int i = random.nextInt(1000)+1000;
-        Contact contact = Contact.builder().name("Nora"+i).lastName("Red").phone("6543-867"+i+"5533")
+        Contact contact = Contact.builder().name("Nora").lastName("Red").phone("6543-867"+i+"5533")
                 .email("noraR"+i+"@mail.com").address("BeerSheva").description("university friend").build();
         appManager.contact().openAddForm();
         appManager.contact().fillAddForm(contact);

@@ -1,10 +1,11 @@
 package tests;
 
-
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.xml.sax.Locator;
+
 
 public class DeleteContact extends TestBase{
     @BeforeMethod
@@ -19,13 +20,14 @@ public class DeleteContact extends TestBase{
 
     @Test
     public void removeContact(){
-        appManager.contact().deleteContact();
-
-
+        appManager.contact().deleteContact(By.cssSelector("h2"));
+        Assert.assertTrue(appManager.contact().isContactsEmpty());
     }
     @Test
-    public void deleteContact2(){
-        appManager.getHelperUser().click(By.cssSelector("h2"));
-        appManager.getHelperUser().click(By.xpath("//button[2]"));
+    public void deleteContactByName(){
+        if(appManager.contact().isContactAddedByName("Nora")){
+            appManager.contact().deleteContact(By.xpath("//*[text()='Nora']"));
+        }
+        Assert.assertTrue(appManager.contact().isContactsEmpty());
     }
 }
