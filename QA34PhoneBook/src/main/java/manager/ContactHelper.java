@@ -38,7 +38,7 @@ public class ContactHelper extends HelperBase{
         wd.findElement(By.cssSelector(".add_form__2rsm2 button")).sendKeys(Keys.ENTER);
     }
 
-    public boolean isContactAddedByName(String tag, By locator) {
+    public boolean isContactPresentInList(String tag, By locator) {
         List<WebElement> list = wd.findElements(locator);
         for(WebElement el:list){
             if(el.getText().equals(tag)){

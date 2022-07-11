@@ -27,8 +27,8 @@ public class AddNewContact extends TestBase{
         appManager.contact().fillAddForm(contact);
        // appManager.getHelperUser().zoomToDecrease();
         appManager.contact().saveContact2();
-        Assert.assertTrue(appManager.contact().isContactAddedByName(contact.getName(),By.cssSelector("h2")));
-        Assert.assertTrue(appManager.contact().isContactAddedByName(contact.getPhone(),By.cssSelector("h3")));
+        Assert.assertTrue(appManager.contact().isContactPresentInList(contact.getName(),By.cssSelector("h2")));
+        Assert.assertTrue(appManager.contact().isContactPresentInList(contact.getPhone(),By.cssSelector("h3")));
 
 
     }
@@ -41,8 +41,8 @@ public class AddNewContact extends TestBase{
         appManager.contact().openAddForm();
         appManager.contact().fillAddForm(contact);
         appManager.contact().saveContact2();
-        Assert.assertTrue(appManager.contact().isContactAddedByName(contact.getName(), By.cssSelector("h2")));
-        Assert.assertTrue(appManager.contact().isContactAddedByName(contact.getPhone(),By.cssSelector("h3")));
+        Assert.assertTrue(appManager.contact().isContactPresentInList(contact.getName(), By.cssSelector("h2")));
+        Assert.assertTrue(appManager.contact().isContactPresentInList(contact.getPhone(),By.cssSelector("h3")));
 
     }
     @AfterMethod

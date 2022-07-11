@@ -1,10 +1,8 @@
 package tests;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.xml.sax.Locator;
 
 
 public class DeleteContact extends TestBase{
@@ -31,7 +29,7 @@ public class DeleteContact extends TestBase{
     }
     @Test
     public void deleteContactByName(){
-        if(appManager.contact().isContactAddedByName("Nora",By.xpath("//*[text()='Nora']"))){
+        if(appManager.contact().isContactPresentInList("Nora",By.xpath("//*[text()='Nora']"))){
             appManager.contact().deleteContact(By.xpath("//*[text()='Nora']"));
         }
         // if before Run list of contacts is empty
