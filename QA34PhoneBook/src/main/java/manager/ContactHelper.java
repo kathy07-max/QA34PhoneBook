@@ -5,8 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.xml.sax.Locator;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 
@@ -37,14 +38,18 @@ public class ContactHelper extends HelperBase{
         wd.findElement(By.cssSelector(".add_form__2rsm2 button")).sendKeys(Keys.ENTER);
     }
 
-    public boolean isContactAddedByName(String name) {
-        List<WebElement> names = wd.findElements(By.cssSelector("h2"));
-        for(WebElement el:names){
-            if(el.getText().equals(name)){
+    public boolean isContactAddedByName(String tag, By locator) {
+        List<WebElement> list = wd.findElements(locator);
+        for(WebElement el:list){
+            if(el.getText().equals(tag)){
                 return true;
             }
         }
         return false;
+    }
+    public List listOfContacts(By locator){
+        new WebDriverWait(wd, Duration.ofSeconds(5));
+        return wd.findElements(locator);
     }
 
     public void addContact() {
