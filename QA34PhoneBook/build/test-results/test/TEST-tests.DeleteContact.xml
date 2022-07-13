@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.DeleteContact" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-07-13T16:26:07" hostname="LAPTOP-S8MI6IBE" time="37.964">
+  <properties/>
+  <testcase name="deleteAllContact" classname="tests.DeleteContact" time="28.155"/>
+  <testcase name="removeContact" classname="tests.DeleteContact" time="5.645"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

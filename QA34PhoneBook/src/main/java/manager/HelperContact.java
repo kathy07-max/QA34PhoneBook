@@ -11,8 +11,8 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 
-public class ContactHelper extends HelperBase{
-    public ContactHelper(WebDriver wd) {
+public class HelperContact extends HelperBase{
+    public HelperContact(WebDriver wd) {
         super(wd);
     }
 
@@ -38,18 +38,23 @@ public class ContactHelper extends HelperBase{
         wd.findElement(By.cssSelector(".add_form__2rsm2 button")).sendKeys(Keys.ENTER);
     }
 
-    public boolean isContactPresentInList(String tag, By locator) {
-        List<WebElement> list = wd.findElements(locator);
-        for(WebElement el:list){
-            if(el.getText().equals(tag)){
+    public boolean isContactAddByName(String name) {
+        List<WebElement> names = wd.findElements(By.cssSelector("h2"));
+        for(WebElement el:names){
+            if(el.getText().equals(name)){
                 return true;
             }
         }
         return false;
     }
-    public List listOfContacts(By locator){
-        new WebDriverWait(wd, Duration.ofSeconds(5));
-        return wd.findElements(locator);
+    public boolean isContactAddByPhone(String phone) {
+        List<WebElement> phones = wd.findElements(By.cssSelector("h3"));
+        for(WebElement el:phones){
+            if(el.getText().equals(phone)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public void addContact() {
@@ -61,20 +66,33 @@ public class ContactHelper extends HelperBase{
         fillAddForm(contact);
         saveContact2();
     }
-    public void deleteContact(By locator){
-        click(locator);
-        click(By.xpath("//button[2]"));
+    public int deleteContact(){
+        int countB = countOfContacts();
+        if(!isContactsEmpty()) {
+            click(By.cssSelector("h2"));
+            click(By.xpath("//button[text()='Remove']"));
+            pause(500);
+        }
+        int countA = countOfContacts();
+        return countB-countA;
+    }
+    public void deleteAllContacts(){
+        click(By.cssSelector("h2"));
+        click(By.xpath("//button[text()='Remove']"));
+        pause(500);
+    }
+
+    public int countOfContacts() {
+        return wd.findElements(By.cssSelector(".contact-item_card__2SOIM")).size();
     }
 
     public boolean isContactsEmpty() {
-        List<WebElement> list = wd.findElements(By.xpath("//h1[text()=' No Contacts here!']"));
-        return list.size()>0;
-
+        return !wd.findElements(By.xpath("//h1[text()=' No Contacts here!']")).isEmpty();
     }
 
     public void addContact2() {
-        for(int i = 0; i < 5; i++){
-            Random random = new Random();
+        Random random = new Random();
+        for(int i = 0; i < 4; i++){
             int r = random.nextInt(1000)+1000;
             Contact contact = Contact.builder().name("Nora"+r).lastName("Red").phone("6543-867"+r+"5533")
                     .email("noraR"+r+"@mail.com").address("BeerSheva").description("university friend").build();

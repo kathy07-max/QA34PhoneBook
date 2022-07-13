@@ -1,9 +1,7 @@
 package tests;
 
 import models.Contact;
-import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -27,8 +25,8 @@ public class AddNewContact extends TestBase{
         appManager.contact().fillAddForm(contact);
        // appManager.getHelperUser().zoomToDecrease();
         appManager.contact().saveContact2();
-        Assert.assertTrue(appManager.contact().isContactPresentInList(contact.getName(),By.cssSelector("h2")));
-        Assert.assertTrue(appManager.contact().isContactPresentInList(contact.getPhone(),By.cssSelector("h3")));
+        Assert.assertTrue(appManager.contact().isContactAddByName(contact.getName()));
+        Assert.assertTrue(appManager.contact().isContactAddByPhone(contact.getPhone()));
 
 
     }
@@ -41,12 +39,9 @@ public class AddNewContact extends TestBase{
         appManager.contact().openAddForm();
         appManager.contact().fillAddForm(contact);
         appManager.contact().saveContact2();
-        Assert.assertTrue(appManager.contact().isContactPresentInList(contact.getName(), By.cssSelector("h2")));
-        Assert.assertTrue(appManager.contact().isContactPresentInList(contact.getPhone(),By.cssSelector("h3")));
+        Assert.assertTrue(appManager.contact().isContactAddByName(contact.getName()));
+        Assert.assertTrue(appManager.contact().isContactAddByPhone(contact.getPhone()));
 
     }
-    @AfterMethod
-    public void postCondition(){
 
-    }
 }
