@@ -10,10 +10,9 @@ public class DeleteContact extends TestBase{
         if(!appManager.getHelperUser().isLogged()){
             appManager.getHelperUser().loggedIn();
         }
-        if(appManager.contact().isContactsEmpty()){
-            appManager.contact().addContact2();
-            appManager.contact().pause(500);
-        }
+        appManager.contact().addContact2();
+        appManager.contact().pause(700);
+
    }
 
     @Test

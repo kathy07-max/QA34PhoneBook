@@ -68,12 +68,14 @@ public class HelperContact extends HelperBase{
     }
     public int deleteContact(){
         int countB = countOfContacts();
+        logger.info("Count before remove is " + countB);
         if(!isContactsEmpty()) {
             click(By.cssSelector("h2"));
             click(By.xpath("//button[text()='Remove']"));
             pause(500);
         }
         int countA = countOfContacts();
+        logger.info("Count after remove is " + countA);
         return countB-countA;
     }
     public void deleteAllContacts(){
@@ -92,13 +94,15 @@ public class HelperContact extends HelperBase{
 
     public void addContact2() {
         Random random = new Random();
-        for(int i = 0; i < 4; i++){
-            int r = random.nextInt(1000)+1000;
-            Contact contact = Contact.builder().name("Nora"+r).lastName("Red").phone("6543-867"+r+"5533")
-                    .email("noraR"+r+"@mail.com").address("BeerSheva").description("university friend").build();
-            openAddForm();
-            fillAddForm(contact);
-            saveContact2();
+        if (isContactsEmpty()) {
+            for (int i = 0; i < 4; i++) {
+                int r = random.nextInt(1000) + 1000;
+                Contact contact = Contact.builder().name("Nora" + r).lastName("Red").phone("6543-867" + r + "5533")
+                        .email("noraR" + r + "@mail.com").address("BeerSheva").description("university friend").build();
+                openAddForm();
+                fillAddForm(contact);
+                saveContact2();
+            }
         }
     }
 }

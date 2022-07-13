@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.DeleteContact" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-07-13T16:26:07" hostname="LAPTOP-S8MI6IBE" time="37.964">
+<testsuite name="tests.DeleteContact" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-13T18:05:22" hostname="LAPTOP-S8MI6IBE" time="10.686">
   <properties/>
-  <testcase name="deleteAllContact" classname="tests.DeleteContact" time="28.155"/>
-  <testcase name="removeContact" classname="tests.DeleteContact" time="5.645"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="removeContact" classname="tests.DeleteContact" time="10.686"/>
+  <system-out><![CDATA[21:05:11.718 INFO  tests.TestBase - Start method with name -->public void tests.DeleteContact.removeContact()
+21:05:22.940 INFO  manager.HelperBase - Count before remove is1
+21:05:33.605 INFO  manager.HelperBase - Count after remove is 0
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

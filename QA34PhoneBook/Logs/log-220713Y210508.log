@@ -1,0 +1,5 @@
+21:05:10.777 INFO  manager.ApplicationManager - All tests run in chrome browser
+21:05:11.694 INFO  manager.ApplicationManager - Current Url___>https://contacts-app.tobbymarshall815.vercel.app/home
+21:05:11.718 INFO  tests.TestBase - Start method with name -->public void tests.DeleteContact.removeContact()
+21:05:22.940 INFO  manager.HelperBase - Count before remove is1
+21:05:33.605 INFO  manager.HelperBase - Count after remove is 0
