@@ -65,7 +65,7 @@ public class HelperUser extends HelperBase {
 //      alert.accept();//click "OK" button
 //      alert.dismiss();// click "cancel" button
       String errorText = alert.getText();
-      System.out.println(errorText);
+      logger.info("Alert is displayed with text: " + errorText);
       alert.accept();
 
       return errorText.contains("Wrong email or password format");

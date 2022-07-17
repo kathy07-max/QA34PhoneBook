@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.DeleteContact" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-13T18:05:22" hostname="LAPTOP-S8MI6IBE" time="10.686">
+<testsuite name="tests.DeleteContact" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-07-16T18:25:53" hostname="LAPTOP-S8MI6IBE" time="20.659">
   <properties/>
-  <testcase name="removeContact" classname="tests.DeleteContact" time="10.686"/>
-  <system-out><![CDATA[21:05:11.718 INFO  tests.TestBase - Start method with name -->public void tests.DeleteContact.removeContact()
-21:05:22.940 INFO  manager.HelperBase - Count before remove is1
-21:05:33.605 INFO  manager.HelperBase - Count after remove is 0
+  <testcase name="deleteAllContact" classname="tests.DeleteContact" time="11.285"/>
+  <testcase name="removeContact" classname="tests.DeleteContact" time="5.63"/>
+  <system-out><![CDATA[21:25:42.420 INFO  tests.TestBase - Start method with name -->deleteAllContact
+21:26:04.812 INFO  tests.TestBase - Start method with name -->removeContact
+21:26:08.571 INFO  manager.HelperBase - Count before remove is 4
+21:26:13.589 INFO  manager.HelperBase - List of contact is not empty
+21:26:14.186 INFO  manager.HelperBase - Count after remove is 3
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

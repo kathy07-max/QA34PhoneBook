@@ -22,10 +22,10 @@ public class DeleteContact extends TestBase{
 
     @Test
     public void deleteAllContact(){
-        while (!appManager.contact().isContactsEmpty()) {
+        while (appManager.contact().isContactHere()) {
             appManager.contact().deleteAllContacts();
         }
-        Assert.assertTrue(appManager.contact().isContactsEmpty());
+        Assert.assertFalse(appManager.contact().isContactHere());
     }
 
 }

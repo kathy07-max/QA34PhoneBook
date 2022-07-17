@@ -5,9 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 
@@ -69,7 +67,8 @@ public class HelperContact extends HelperBase{
     public int deleteContact(){
         int countB = countOfContacts();
         logger.info("Count before remove is " + countB);
-        if(!isContactsEmpty()) {
+        if(isContactHere()) {
+            logger.info("List of contact is not empty");
             click(By.cssSelector("h2"));
             click(By.xpath("//button[text()='Remove']"));
             pause(500);
@@ -88,13 +87,13 @@ public class HelperContact extends HelperBase{
         return wd.findElements(By.cssSelector(".contact-item_card__2SOIM")).size();
     }
 
-    public boolean isContactsEmpty() {
-        return !wd.findElements(By.xpath("//h1[text()=' No Contacts here!']")).isEmpty();
+    public boolean isContactHere() {
+        return wd.findElements(By.xpath("//h1[text()=' No Contacts here!']")).isEmpty();
     }
 
     public void addContact2() {
         Random random = new Random();
-        if (isContactsEmpty()) {
+        if (!isContactHere()) {
             for (int i = 0; i < 4; i++) {
                 int r = random.nextInt(1000) + 1000;
                 Contact contact = Contact.builder().name("Nora" + r).lastName("Red").phone("6543-867" + r + "5533")
