@@ -73,6 +73,7 @@ public class HelperContact extends HelperBase{
             click(By.xpath("//button[text()='Remove']"));
             pause(500);
         }
+        pause(500);
         int countA = countOfContacts();
         logger.info("Count after remove is " + countA);
         return countB-countA;
@@ -88,10 +89,11 @@ public class HelperContact extends HelperBase{
     }
 
     public boolean isContactHere() {
+
         return wd.findElements(By.xpath("//h1[text()=' No Contacts here!']")).isEmpty();
     }
 
-    public void addContact2() {
+    public void addContactS() {
         Random random = new Random();
         if (!isContactHere()) {
             for (int i = 0; i < 4; i++) {

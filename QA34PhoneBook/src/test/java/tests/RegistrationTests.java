@@ -1,6 +1,8 @@
 package tests;
 
+import manager.MyDataProvider;
 import models.User;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -16,16 +18,18 @@ public class RegistrationTests extends TestBase {
     public void registrationSuccess(){
         int i = (int)(System.currentTimeMillis()/1000)%3800;
         appManager.getHelperUser().openLoginRegForm();
-        appManager.getHelperUser().fillLogRegForm("shevchenko"+i+"@mail.ru","020985$Max");
+        appManager.getHelperUser().fillLogRegForm("shev"+i+"@mail.ru","020985$Max");
         appManager.getHelperUser().submitRegistration();
+        Assert.assertTrue(appManager.getHelperUser().isLogged());
+        Assert.assertFalse(appManager.contact().isContactHere());
     }
 
-    @Test
-    public void registrationSuccessModel(){
-        int i = (int)(System.currentTimeMillis()/1000)%3800;
-        User user1 = new User().setEmail("shevchenko"+i+"@gmail.com").setPassword("020985$Max");
+
+    @Test(dataProvider = "registrationCSV",dataProviderClass = MyDataProvider.class)
+    public void registrationSucCSV(User user){
         appManager.getHelperUser().openLoginRegForm();
-        appManager.getHelperUser().fillLogRegForm(user1);
+        appManager.getHelperUser().fillLogRegForm(user);
         appManager.getHelperUser().submitRegistration();
+        Assert.assertTrue(appManager.getHelperUser().isLogged());
     }
 }

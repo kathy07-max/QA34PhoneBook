@@ -33,6 +33,8 @@ public class HelperUser extends HelperBase {
    public void fillLogRegForm(String email, String password) {
       type(By.xpath("//input[1]"), email);
       type(By.xpath("//input[2]"), password);
+
+      takeScreenshots("C:\\Users\\97254\\DocQA34\\GitHub\\QA34PhoneBook\\QA34PhoneBook\\src\\test\\screenshots\\screen-1.jpeg");
    }
 
    public boolean isLogged() {
@@ -71,8 +73,8 @@ public class HelperUser extends HelperBase {
       return errorText.contains("Wrong email or password format");
    }
 
-   public void fillLogRegForm(User user1) {
-      type(By.xpath("//input[1]"), user1.getEmail());
-      type(By.xpath("//input[2]"), user1.getPassword());
+   public void fillLogRegForm(User user) {
+      type(By.xpath("//input[1]"), user.getEmail());
+      type(By.xpath("//input[2]"), user.getPassword());
    }
 }

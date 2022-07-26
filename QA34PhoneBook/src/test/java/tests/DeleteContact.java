@@ -10,18 +10,18 @@ public class DeleteContact extends TestBase{
         if(!appManager.getHelperUser().isLogged()){
             appManager.getHelperUser().loggedIn();
         }
-        appManager.contact().addContact2();
+        appManager.contact().addContactS();
         appManager.contact().pause(700);
 
    }
 
     @Test
-    public void removeContact(){
+    public void deleteContact(){
        Assert.assertEquals(appManager.contact().deleteContact(),1);
     }
 
     @Test
-    public void deleteAllContact(){
+    public void removeAllContact(){
         while (appManager.contact().isContactHere()) {
             appManager.contact().deleteAllContacts();
         }

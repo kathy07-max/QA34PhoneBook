@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.RegistrationTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-07-26T18:56:33" hostname="LAPTOP-S8MI6IBE" time="2.287">
+  <properties/>
+  <testcase name="registrationSucCSV[0](User{email='2193shev@mail.ru', password='020985$Max'})" classname="tests.RegistrationTests" time="0.537"/>
+  <testcase name="registrationSucCSV[1](User{email='2193shev@gmail.com', password='020985$Max'})" classname="tests.RegistrationTests" time="0.385"/>
+  <testcase name="registrationSucCSV[2](User{email='2193shev@mail.com', password='020985$Max'})" classname="tests.RegistrationTests" time="0.379"/>
+  <testcase name="registrationSuccess" classname="tests.RegistrationTests" time="0.833"/>
+  <system-out><![CDATA[21:56:33.071 INFO  tests.TestBase - Start method with name -->registrationSucCSV
+21:56:33.088 INFO  manager.MyListener - WebDriver start find element: By.xpath: //*[text()='Sign Out']
+21:56:33.103 INFO  manager.MyListener - WebDriver found element:By.xpath: //*[text()='Sign Out']
+21:56:33.133 INFO  manager.MyListener - WebDriver start find element: By.xpath: //*[text()='LOGIN']
+21:56:33.149 INFO  manager.MyListener - WebDriver found element:By.xpath: //*[text()='LOGIN']
+21:56:33.175 INFO  manager.MyListener - WebDriver start find element: By.xpath: //input[1]
+21:56:33.185 INFO  manager.MyListener - WebDriver found element:By.xpath: //input[1]
+21:56:33.258 INFO  manager.MyListener - WebDriver start find element: By.xpath: //input[2]
+21:56:33.267 INFO  manager.MyListener - WebDriver found element:By.xpath: //input[2]
+21:56:33.335 INFO  manager.MyListener - WebDriver start find element: By.xpath: //button[2]
+21:56:33.348 INFO  manager.MyListener - WebDriver found element:By.xpath: //button[2]
+21:56:33.669 INFO  tests.TestBase - Start method with name -->registrationSucCSV
+21:56:33.684 INFO  manager.MyListener - WebDriver start find element: By.xpath: //*[text()='Sign Out']
+21:56:33.684 INFO  manager.MyListener - WebDriver found element:By.xpath: //*[text()='Sign Out']
+21:56:33.726 INFO  manager.MyListener - WebDriver start find element: By.xpath: //*[text()='LOGIN']
+21:56:33.737 INFO  manager.MyListener - WebDriver found element:By.xpath: //*[text()='LOGIN']
+21:56:33.764 INFO  manager.MyListener - WebDriver start find element: By.xpath: //input[1]
+21:56:33.784 INFO  manager.MyListener - WebDriver found element:By.xpath: //input[1]
+21:56:33.856 INFO  manager.MyListener - WebDriver start find element: By.xpath: //input[2]
+21:56:33.865 INFO  manager.MyListener - WebDriver found element:By.xpath: //input[2]
+21:56:33.934 INFO  manager.MyListener - WebDriver start find element: By.xpath: //button[2]
+21:56:33.943 INFO  manager.MyListener - WebDriver found element:By.xpath: //button[2]
+21:56:34.111 INFO  tests.TestBase - Start method with name -->registrationSucCSV
+21:56:34.122 INFO  manager.MyListener - WebDriver start find element: By.xpath: //*[text()='Sign Out']
+21:56:34.131 INFO  manager.MyListener - WebDriver found element:By.xpath: //*[text()='Sign Out']
+21:56:34.161 INFO  manager.MyListener - WebDriver start find element: By.xpath: //*[text()='LOGIN']
+21:56:34.173 INFO  manager.MyListener - WebDriver found element:By.xpath: //*[text()='LOGIN']
+21:56:34.198 INFO  manager.MyListener - WebDriver start find element: By.xpath: //input[1]
+21:56:34.208 INFO  manager.MyListener - WebDriver found element:By.xpath: //input[1]
+21:56:34.287 INFO  manager.MyListener - WebDriver start find element: By.xpath: //input[2]
+21:56:34.296 INFO  manager.MyListener - WebDriver found element:By.xpath: //input[2]
+21:56:34.367 INFO  manager.MyListener - WebDriver start find element: By.xpath: //button[2]
+21:56:34.376 INFO  manager.MyListener - WebDriver found element:By.xpath: //button[2]
+21:56:34.541 INFO  tests.TestBase - Start method with name -->registrationSuccess
+21:56:34.550 INFO  manager.MyListener - WebDriver start find element: By.xpath: //*[text()='Sign Out']
+21:56:34.554 INFO  manager.MyListener - WebDriver found element:By.xpath: //*[text()='Sign Out']
+21:56:34.587 INFO  manager.MyListener - WebDriver start find element: By.xpath: //*[text()='LOGIN']
+21:56:34.598 INFO  manager.MyListener - WebDriver found element:By.xpath: //*[text()='LOGIN']
+21:56:34.626 INFO  manager.MyListener - WebDriver start find element: By.xpath: //input[1]
+21:56:34.634 INFO  manager.MyListener - WebDriver found element:By.xpath: //input[1]
+21:56:34.711 INFO  manager.MyListener - WebDriver start find element: By.xpath: //input[2]
+21:56:34.719 INFO  manager.MyListener - WebDriver found element:By.xpath: //input[2]
+21:56:35.091 INFO  manager.MyListener - WebDriver start find element: By.xpath: //button[2]
+21:56:35.107 INFO  manager.MyListener - WebDriver found element:By.xpath: //button[2]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

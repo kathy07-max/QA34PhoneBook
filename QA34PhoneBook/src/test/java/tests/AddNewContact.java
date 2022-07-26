@@ -1,5 +1,6 @@
 package tests;
 
+import manager.MyDataProvider;
 import models.Contact;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -31,5 +32,13 @@ public class AddNewContact extends TestBase{
         logger.info("Check name: " + contact.getName());
         Assert.assertTrue(appManager.contact().isContactAddByPhone(contact.getPhone()));
         logger.info("Check phone: " + contact.getPhone());
+    }
+    @Test(dataProvider = "newContactCSV",dataProviderClass = MyDataProvider.class)
+    public void addNewContactCSV(Contact contact) {
+        appManager.contact().openAddForm();
+        appManager.contact().fillAddForm(contact);
+        appManager.contact().saveContact2();
+        Assert.assertTrue(appManager.contact().isContactAddByName(contact.getName()));
+        Assert.assertTrue(appManager.contact().isContactAddByPhone(contact.getPhone()));
     }
 }

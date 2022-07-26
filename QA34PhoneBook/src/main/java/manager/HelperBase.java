@@ -1,11 +1,12 @@
 package manager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
 
 public class HelperBase {
     WebDriver wd;
@@ -30,6 +31,16 @@ public class HelperBase {
 //        JavascriptExecutor executor = (JavascriptExecutor)wd;
 //        executor.executeScript("document.body.style.zoom = '0.7'");
 
+    }
+
+    public void takeScreenshots(String pathToFile){
+        File tmp = ((TakesScreenshot)wd).getScreenshotAs(OutputType.FILE);
+        File screen = new File(pathToFile);
+        try {
+            Files.copy(tmp,screen);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void pause(int time){
         try {
